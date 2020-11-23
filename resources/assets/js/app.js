@@ -136,19 +136,19 @@ $.when( $.ready ).then(function() {
         var active = (app.hasClass('header'));
         app.toggleClass('header');
         if(active) {
-            $('.add-item').hide();
-            $('.item-edit').hide();
+            $('.item__add').hide();
+            $('.item__edit').hide();
             $('#app').removeClass('sidebar');
             $('#sortable').sortable('disable');
         } else {
             $('#sortable').sortable('enable');
             setTimeout(function() {
-                $('.add-item').fadeIn();
-                $('.item-edit').fadeIn();
+                $('.item__add').fadeIn().css({display: 'flex'});
+                $('.item__edit').fadeIn().css({display: 'flex'});
             }, 350);
 
         }
-    }).on('click', '#add-item, #pin-item', function(e) {
+    }).on('click', '#item__add, #pin-item', function(e) {
         e.preventDefault();
         var app = $('#app');
         var active = (app.hasClass('sidebar'));

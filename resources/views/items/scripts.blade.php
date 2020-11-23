@@ -29,13 +29,13 @@
                 }
             });
             // initial load
-            $('#tile-preview .title').html($('#appname').val());
             $('#tile-preview .item').css('backgroundColor', $('#appcolour').val());
-            $('#tile-preview .app-icon').attr('src', $('#appimage img').attr('src'));
+            $('#tile-preview .item__title').html($('#appname').val());
+            $('#tile-preview .item__icon').attr('src', $('#appimage img').attr('src'));
 
             // Updates
             $('#appname').on('keyup change', function(e) {
-                $('#tile-preview .title').html($(this).val());
+                $('#tile-preview .item__title').html($(this).val());
             })
             $('#apptype').on('change', function(e) {
                 appload($(this).find('option:selected').text());
@@ -58,7 +58,7 @@
                         hueb.setColor( data.colour );
                         $('input[name=pinned]').prop('checked', true);
                         // Preview details
-                        $('#tile-preview .app-icon').attr('src', data.iconview);
+                        $('#tile-preview .item__icon').attr('src', data.iconview);
                         $('#tile-preview .title').html(data.name);
                         if(data.config != null) {
                             $.get(base+'/view/'+data.config, function(getdata) {

@@ -1,0 +1,15 @@
+@each $prop, $abbrev in (background-color: bg, color: text) {
+  @each $name, $color in $theme-colors {
+    .#{$abbrev}--#{$name} { 
+      #{$prop}: $color !important; 
+    }
+  }
+}
+
+.black {
+	color: $black !important;
+}
+
+.white {
+	color: $white !important;
+}

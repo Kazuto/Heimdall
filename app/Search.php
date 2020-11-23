@@ -127,22 +127,27 @@ abstract class Search
             if((bool)$user_search_provider) {
                 $name = 'app.options.'.$user_search_provider;
                 $provider = self::providerDetails($user_search_provider);
-
-                $output .= '<div class="searchform">';
+                $output .= '<div class="form">';
                 $output .= '<form action="'.url('search').'"'.getLinkTargetAttribute().' method="get">';
-                $output .= '<div id="search-container" class="input-container">';
-                $output .= '<select name="provider">';
+                $output .= '<div class="input-group">';
+                $output .= '<div class="input-group__prepend">';
+                $output .= '<div class="select">';
+                $output .= '<select name="provider" class="form-control">';
                 foreach(self::providers() as $key => $searchprovider) {
                     $selected = ($key === $user_search_provider) ? ' selected="selected"' : '';
                     if (is_numeric($key)) {
-                      $output .= '<option value="'.$key.'"'.$selected.'>'.$searchprovider['title'].'</option>';
+                        $output .= '<option value="'.$key.'"'.$selected.'>'.$searchprovider['title'].'</option>';
                     } else {
-                      $output .= '<option value="'.$key.'"'.$selected.'>'.__('app.options.'.$key).'</option>';
+                        $output .= '<option value="'.$key.'"'.$selected.'>'.__('app.options.'.$key).'</option>';
                     }
                 }
                 $output .= '</select>';
-                $output .= Form::text('q', null, ['class' => 'homesearch', 'autofocus' => 'autofocus', 'placeholder' => __('app.settings.search').'...']);
-                $output .= '<button type="submit">'.ucwords(__('app.settings.search')).'</button>';
+                $output .= '</div>';
+                $output .= '</div>';
+                $output .= Form::text('q', null, ['class' => 'form-control', 'autofocus' => 'autofocus', 'placeholder' => __('app.settings.search').'...']);
+                $output .= '<div class="input-group__append">';
+                $output .= '<button type="submit" class="button button--primary">'.ucwords(__('app.settings.search')).'</button>';
+                $output .= '</div>';
                 $output .= '</div>';
                 $output .= '</form>';
                 $output .= '</div>';

@@ -19,3 +19,5 @@ mix.babel([
    .sass('resources/assets/sass/app.scss', 'public/css').options({
       processCssUrls: false
    }).version();
+
+mix.copyDirectory('resources/assets/fonts', 'public/fonts')

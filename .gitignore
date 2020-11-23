@@ -27,3 +27,4 @@ yarn-error.log
 .VolumeIcon.icns
 storage/app/public/avatars/*
 .env
+.history

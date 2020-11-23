@@ -1,0 +1,43 @@
+.text--sm {
+  font-size: $font-size-sm !important;
+}
+
+.text--lg {
+  font-size: $font-size-lg !important;
+}
+
+.text--light {
+  font-weight : $font-weight-light !important;
+}
+
+.text--regular {
+  font-weight : $font-weight-normal !important;
+}
+
+.text--medium {
+  font-weight : $font-weight-medium !important;
+}
+
+.text--semibold {
+  font-weight : $font-weight-semibold !important;
+}
+
+.text--black {
+  font-weight: $font-weight-black !important;
+}
+
+.text--underline {
+  text-decoration: underline !important;
+}
+
+.text--left {
+	text-align: left !important;
+}
+
+.text--center {
+	text-align: center !important;
+}
+
+.text--right {
+	text-align: right !important;
+}

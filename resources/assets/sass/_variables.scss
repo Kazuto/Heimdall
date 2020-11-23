@@ -1,18 +1,96 @@
+// Breakpoints
+$bp-small: 768px;
+$bp-medium: 992px;
+$bp-large: 1200px;
+$bp-xlarge: 1440px;
+$bp-xxlarge: 1680px;
 
-// Body
-$body-bg: #cfd2d4;
+// Spacer
+$spacer: 1rem;
+$spacers: () !default;
+$spacers: map-merge(
+  (
+    0: 0,
+    1: ($spacer * .25),
+    2: ($spacer * .5),
+    3: $spacer,
+    4: ($spacer * 1.5),
+    5: ($spacer * 3)
+  ),
+  $spacers
+);
 
+// Colors
+$black:                     #0A0A0A !default;
+$gray-900:                  #374047 !default;
+$gray-800:                  #666d72 !default;
+$gray-700:                  #848a8e !default;
+$gray-600:                  #9ca0a4 !default;
+$gray-500:                  #b0b3b6 !default;
+$gray-400:                  #c1c4c6 !default;
+$gray-300:                  #d1d3d5 !default;
+$gray-200:                  #edeeee !default;
+$gray-100:                  #f9f9fa !default;
+$white:                     #FFFFFF !default;
 
-$app-text: #2f313a;
+$primary:                   #47918a !default;
+$secondary:                   $gray-800 !default;
+$success:                   #0eb584 !default;
+$danger:                    #d64d55 !default;
+$light:                       $gray-200 !default;
+$dark:                        $gray-900 !default;
 
-$app-block-color: #b71234;
-$app-light-color: #84764d;
-$app-dark-color: #1d1d1b;
+$theme-colors: () !default;
+$theme-colors: map-merge(
+  (
+    "primary":    $primary,
+    "secondary":  $secondary,
+    "success":    $success,
+    "danger":     $danger,
+    "light":      $light,
+    "dark":       $dark
+  ),
+  $theme-colors
+);
 
-$app-green: #0eb584;
-$app-red: #d64d55;
-$app-blue: #47a4e9;
-$app-purple: #514a77;
+$text-muted:                  $gray-700 !default;
 
-$table-heading: #f2f3f6;
-$table-line: #cdced8;
+$body-bg:                     $gray-100 !default;
+$body-text:                   $gray-900 !default;
+
+// Typography
+
+$font-family-sans-serif:      'Heebo', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base:            $font-family-sans-serif !default;
+
+$font-size-base:              1rem !default;
+$font-size-lg:                $font-size-base * 1.25 !default;
+$font-size-sm:                $font-size-base * .875 !default;
+
+$small-font-size:             $font-size-base * .55 !default;
+
+$font-weight-lighter:         lighter !default;
+$font-weight-light:           300 !default;
+$font-weight-normal:          400 !default;
+$font-weight-medium:          500 !default;
+$font-weight-semibold:        600 !default;
+$font-weight-bold:            700 !default;
+$font-weight-black:           900 !default;
+
+$font-weight-base:            $font-weight-normal !default;
+$line-height-base:            1.5 !default;
+
+$table-heading:             $gray-200 !default;
+$table-line:                $gray-100 !default;
+
+// Components
+
+$border-radius:               .5rem !default;
+$border-radius-sm:            .25rem !default;
+
+$box-shadow:                  0 20px 30px 0 rgba(0, 0, 0, 0.08), 0 4px 4px 0 rgba(0, 0, 0, 0.12) !default;
+
+$nav-bg:                      $dark !default;
+$nav-bg-hover:                darken($nav-bg, 10%) !default;
+$nav-color:                   $light !default;

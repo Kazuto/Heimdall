@@ -1,0 +1,113 @@
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus
+input:-webkit-autofill, 
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: inherit;
+  -webkit-text-fill-color: inherit;
+  -webkit-box-shadow: inherit;
+  transition: inherit;
+  color: $body-text!important;
+}
+
+input:-webkit-autofill {
+  -webkit-animation-name: autofill;
+  -webkit-animation-fill-mode: both;
+}
+
+input:autofill {
+  animation-name: autofill;
+  animation-fill-mode: both;
+}
+
+.input {
+  width: 280px;
+  margin: 20px;
+  
+  label:not(.switch),
+  &__label {
+    width: 100%;
+    font-size: 13px;
+    color: $gray-600;
+    margin-bottom: 15px;
+    display: block;
+  }
+
+  input, select {
+    width: 100%;
+    border: 1px solid #dedfe2;
+    padding: 10px;
+    border-radius: 6px;
+  }
+}
+
+.form-control {
+  width: 100%;
+  flex: 1;
+
+  background-color: rgba($white, .5);
+  color: $body-text;
+
+  border: none;
+  outline: none;
+  border-radius: $border-radius;
+
+  padding: .5rem .75rem;
+  font-size: $font-size-sm;
+
+  -webkit-appearance: none;
+}
+
+.input-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: $border-radius;
+  overflow: 0;
+
+  > .form-control:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  > .form-control:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  &__prepend * {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  &__append * {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+.select {
+  position: relative;
+  padding-right: 1rem;
+  &::after {
+    position: absolute;
+    top: 50%;
+    right: .5rem;
+    transform: translateY(-50%);
+    
+    content: '';
+
+    width: 0; 
+    height: 0; 
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    
+    border-top: 5px solid $body-text;
+  }
+}

@@ -1,0 +1,29 @@
+@mixin bp-small {
+  @media screen and (min-width: $bp-small) {
+      @content
+  }
+};
+
+@mixin bp-medium {
+  @media screen and (min-width: $bp-medium) {
+      @content
+  }
+};
+
+@mixin bp-large {
+  @media screen and (min-width: $bp-large) {
+      @content
+  }
+};
+
+@mixin bp-xlarge {
+  @media screen and (min-width: $bp-xlarge) {
+      @content
+  }
+};
+
+@mixin bp-xxlarge {
+  @media screen and (min-width: $bp-xxlarge) {
+      @content
+  }
+};

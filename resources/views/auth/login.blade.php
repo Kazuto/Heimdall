@@ -15,8 +15,10 @@ $user = \App\User::currentUser();
             <img class="user-img" src="{{ asset('/img/heimdall-icon-small.png') }}" />
             @endif
             {{ $user->username }}
-            <input id="password" type="password" class="form-control" name="password" autofocus required>
-            <button type="submit" class="btn btn-primary">Login</button>
+            <div class="input-group">
+                <input id="password" type="password" class="form-control" name="password" autofocus required>
+            </div>
+            <button type="submit" class="button button--primary button--block">Login</button>
         </div>
     </div>
         
